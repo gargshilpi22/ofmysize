@@ -7,16 +7,19 @@ gem 'rails', '3.1.0'
 
 gem 'mysql2'
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
+  gem 'less-rails'
+  gem 'less-rails-bootstrap'
 end
 
 gem 'jquery-rails'
+gem 'therubyracer'
+gem 'libv8'
 
 # Use unicorn as the web server
 # gem 'unicorn'
