@@ -32,5 +32,7 @@ gem 'libv8'
 
 group :test do
   # Pretty printed test output
+  gem 'cucumber-rails', :require => false
   gem 'turn', :require => false
+  gem 'database_cleaner'
 end
