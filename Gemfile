@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
+gem 'bootstrap-sass'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -13,13 +14,12 @@ group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
-  gem 'less-rails'
-  gem 'less-rails-bootstrap'
 end
 
 gem 'jquery-rails'
 gem 'therubyracer'
 gem 'libv8'
+gem 'rspec-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'
