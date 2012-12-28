@@ -7,8 +7,9 @@
 	<h6> products </h6>
 
 	<% @products.each do |product| %>
-		<img src="http://www.whitehouseblackmarket.com/Product_Images/570062324_190_normal.jpg" alt = "image" width = "200", height="200" >
+		<img src= <%= product.image_url %> alt = "image" width = "200", height="200" >
 		<%= product.name %>
+		<br/>
 	<% end %>
 
 </body>
