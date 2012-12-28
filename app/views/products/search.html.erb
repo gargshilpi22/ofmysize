@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title> ofmysize </title>
+</head>
+
+<body>
+	<h4> Search products </h4>
+
+	<%= form_tag '/products', :action => 'search', :html => {:class => 'form-horizontal'} do %>
+		<div class="control-group">
+			<%= label_tag :gender, "Gender: ", :class=>"control-label" %>
+			<div class="controls">
+				<%= radio_button_tag :gender, 'male'%> male
+				<%= radio_button_tag :gender, 'female'%> female
+			</div>
+			<br/>
+
+			<%= label_tag :category, "Category: ", :class=>"control-label" %>
+			<div class="controls">
+				<%= select_tag :category %>
+			</div>
+
+			<%= label_tag :size, "Size", :class=>"control-label" %>
+			<div class="controls">
+				<%= select_tag :size %>
+			</div>
+
+			<%= label_tag :brand, "Brand", :class=>"control-label" %>
+			<div class="controls">
+				<%= select_tag :brand %>
+			</div>
+			<br/>
+
+			<div class="controls">
+				<%= submit_tag "Search", :class=>"btn btn-primary"%>
+			</div>
+		</div>
+	<% end %>
+</body>
+
+</html>

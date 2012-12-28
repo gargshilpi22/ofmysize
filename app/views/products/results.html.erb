@@ -1,0 +1,16 @@
+<html>
+<head>
+	<title> ofmysize </title>
+</head>
+
+<body>
+	<h6> products </h6>
+
+	<% @products.each do |product| %>
+		<img src="http://www.whitehouseblackmarket.com/Product_Images/570062324_190_normal.jpg" alt = "image" width = "200", height="200" >
+		<%= product.name %>
+	<% end %>
+
+</body>
+	
+</html>
