@@ -10,24 +10,31 @@
 		<div class="control-group">
 			<%= label_tag :gender, "Gender: ", :class=>"control-label" %>
 			<div class="controls">
+				<%= radio_button_tag :gender, 'female', :checked => true%> female
 				<%= radio_button_tag :gender, 'male'%> male
-				<%= radio_button_tag :gender, 'female'%> female
+			</div>
+			<br/>
+
+			<%= label_tag :size_type, "Size type: ", :class=>"control-label" %>
+			<div class="controls">
+				<%= radio_button_tag :size_type, 'R', :checked => true%> regular
+				<%= radio_button_tag :size_type, 'P'%> petite
 			</div>
 			<br/>
 
 			<%= label_tag :category, "Category: ", :class=>"control-label" %>
 			<div class="controls">
-				<%= select_tag :category %>
+				<%= select_tag :category, options_from_collection_for_select(@category, "id", "name"), :prompt => "Select Category: " %>
 			</div>
 
 			<%= label_tag :size, "Size", :class=>"control-label" %>
 			<div class="controls">
-				<%= select_tag :size %>
+				<%= select_tag :size, options_from_collection_for_select(@size, "id", "name"), :prompt => "Select Size: " %>
 			</div>
 
 			<%= label_tag :brand, "Brand", :class=>"control-label" %>
 			<div class="controls">
-				<%= select_tag :brand %>
+				<%= select_tag :brand, options_from_collection_for_select(@brand, "id", "name"), :prompt => "Select Brand: " %>
 			</div>
 			<br/>
 
