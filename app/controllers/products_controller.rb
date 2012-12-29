@@ -15,13 +15,13 @@ class ProductsController < ApplicationController
 		size = Size.where(:id => params[:size], :size_type => params[:size_type]).first
 		@products = size.products
 
-		if category_id
+		if category_id != ""
 			category = Category.find(category_id)
 			category_products = category.products
 			@products = @products & category_products
 		end
 
-		if brand_id
+		if brand_id != ""
 			brand = Brand.find(brand_id)
 			brand_products = brand.products	
 			@products = @products & brand_products
