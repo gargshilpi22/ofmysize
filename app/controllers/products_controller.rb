@@ -9,13 +9,21 @@ class ProductsController < ApplicationController
 	end
 
 	def search
-		category = params[:category]
-		brand = params[:brand]
+		category = Category.find(params[:category])
+		brand = Brand.find(params[:brand])
 		gender = params[:gender]
-		size = params[:size]
-		size_type = params[:size_type]
+		size = Size.where(:id => params[:size], :size_type => params[:size_type]).first
 
-		@products = Product.all
+		category_products = category.products
+		brand_products = brand.products
+		size_products = size.products
+		
+		@products = category_products & brand_products & size_products
+		if gender
+			gender_products = Product.where(:gender => gender)
+			@products = @products & gender_products
+		end
+
 		render 'products/results'
 	end
 
